@@ -1,0 +1,13 @@
+<%- include("partials/header"); -%>
+<h1 style="margin-bottom: 25px;"> Delete Posts</h1>
+<%  posts.forEach(text => { %>
+    <form action="/delete" method="POST">
+       <div>
+       <hr >
+        <h1 class="deletePost"><%=text.title%></h1 >
+            <button type="submit" class="btn btn-md btn-light" name="delete" value="<%=text._id%>"style="position:absolute;right: 100px;margin-top:20px;">Delete Post</button>
+            <p><%= text.content%></p>
+        </div>
+        </form>
+<%})  %>
+<%- include("partials/footer"); -%>
